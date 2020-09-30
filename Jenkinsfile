@@ -25,8 +25,8 @@ pipeline {
             env.encodedPass=URLEncoder.encode(pass, "UTF-8")
           }
 
-          sh '''git remote set-url origin https://${user}:${encodedPass}@github.com/${user}/testpipeline5.git
-git push https://${user}:${encodedPass}@github.com/${user}/testpipeline5.git HEAD:master -f --delete origin/develop'''
+          sh '''
+git push https://${user}:${encodedPass}@github.com/${user}/testpipeline5.git HEAD:master -f'''
         }
 
       }
