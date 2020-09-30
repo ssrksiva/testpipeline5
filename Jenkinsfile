@@ -24,9 +24,7 @@ pipeline {
           script {
             env.encodedPass=URLEncoder.encode(pass, "UTF-8")
           }
-
-          sh '''
-git push https://${user}:${encodedPass}@github.com/${user}/testpipeline5.git HEAD:master -f'''
+          sh 'git push https://${user}:${encodedPass}@github.com/${user}/testpipeline5.git HEAD:master -f'
         }
 
       }
