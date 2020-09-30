@@ -25,7 +25,7 @@ pipeline {
             env.encodedPass=URLEncoder.encode(pass, "UTF-8")
           }
 
-          sh 'git branch https://${user}:${encodedPass}@github.com/${user}/testpipeline5.git -d develop'
+          sh 'git branch origin -d develop'
         }
 
       }
