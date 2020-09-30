@@ -13,7 +13,6 @@ pipeline {
       }
     }
 
-    
     stage('Deliver for development') {
       when {
         branch 'develop'
@@ -25,8 +24,10 @@ pipeline {
           script {
             env.encodedPass=URLEncoder.encode(pass, "UTF-8")
           }
+
           sh 'git push https://${user}:${encodedPass}@github.com/${user}/testpipeline5.git HEAD:master -f --delete develop'
         }
+
       }
     }
 
